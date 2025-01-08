@@ -36,4 +36,4 @@ jobs:
       # Push Docker image to Amazon ECR
       - name: Push Docker image to ECR
         run: |
-          docker push ${{ secrets.AWS_ACCESS_KEY_ID }}.dkr.ecr ${{ secrets.AWS_SECRET_ACCESS_KEY }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/futurerepo:latest
+          docker push 688567286595.dkr.ecr.us-east-1.amazonaws.com/futurerepo:latest
