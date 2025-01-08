@@ -7,7 +7,7 @@ on:
 
 jobs:
   build-and-push:
-    runs-on: ubuntu-latestupdate
+    runs-on: ubuntu-latest
 
     steps:
       # Checkout code
