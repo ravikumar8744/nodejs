@@ -30,10 +30,10 @@ jobs:
       # Build Docker image
       - name: Build Docker image
         run: |
-          docker build -t my-app-repo .
-          docker tag my-app-repo:latest 688567286595.dkr.ecr.us-east-1.amazonaws.com/my-app-repo:latestupdate
+          docker build -t futurerepo .
+          docker tag futurerepo:latest 688567286595.dkr.ecr.us-east-1.amazonaws.com/futurerepo:latest
 
       # Push Docker image to Amazon ECR
       - name: Push Docker image to ECR
         run: |
-          docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/testrepo:latestupdate
+          docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/futurerepo:latest
