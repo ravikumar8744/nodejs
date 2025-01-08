@@ -7,7 +7,7 @@ on:
 
 jobs:
   build-and-push:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latestupdate
 
     steps:
       # Checkout code
@@ -21,7 +21,7 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
-          
+
       # Login to Amazon ECR
       - name: Login to Amazon ECR
         id: login-ecr
@@ -30,10 +30,10 @@ jobs:
       # Build Docker image
       - name: Build Docker image
         run: |
-          docker build -t futurerepo .
-          docker tag futurerepo:latest 688567286595.dkr.ecr.us-east-1.amazonaws.com/futurerepo:latest
+          docker build -t my-app-repo .
+          docker tag my-app-repo:latestupdateupdate 688567286595.dkr.ecr.us-east-1.amazonaws.com/my-app-repo:latestupdate
 
       # Push Docker image to Amazon ECR
       - name: Push Docker image to ECR
         run: |
-          docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/futurerepo:latest
+          docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/testrepo:latestupdate
